@@ -1,0 +1,23 @@
+b6e6b000-b6e8b000 r--s 00000000 00:0b 1364       /dev/__properties__
+b6e8b000-b6ea4000 r-xp 00000000 1f:00 708        /system/lib/libm.so
+b6ea4000-b6ea5000 r--p 00018000 1f:00 708        /system/lib/libm.so
+b6ea5000-b6ea6000 rw-p 00019000 1f:00 708        /system/lib/libm.so
+b6ea6000-b6eed000 r-xp 00000000 1f:00 655        /system/lib/libc.so
+b6eed000-b6eef000 r--p 00046000 1f:00 655        /system/lib/libc.so
+b6eef000-b6ef2000 rw-p 00048000 1f:00 655        /system/lib/libc.so
+b6ef2000-b6f00000 rw-p 00000000 00:00 0 
+b6f00000-b6f01000 r-xp 00000000 1f:00 770        /system/lib/libstdc++.so
+b6f01000-b6f02000 r--p 00000000 1f:00 770        /system/lib/libstdc++.so
+b6f02000-b6f03000 rw-p 00001000 1f:00 770        /system/lib/libstdc++.so
+b6f03000-b6f05000 r--p 00000000 00:00 0 
+b6f05000-b6f07000 rw-p 00000000 00:00 0 
+b6f07000-b6f16000 r-xp 00000000 1f:00 152        /system/bin/linker
+b6f16000-b6f17000 r--p 0000e000 1f:00 152        /system/bin/linker
+b6f17000-b6f18000 rw-p 0000f000 1f:00 152        /system/bin/linker
+b6f18000-b6f19000 rw-p 00000000 00:00 0 
+b6f19000-b6f1b000 r-xp 00000000 1f:01 6739       /data/local/tmp/target
+b6f1b000-b6f1c000 r--p 00001000 1f:01 6739       /data/local/tmp/target
+b6f1c000-b6f1d000 rw-p 00000000 00:00 0 
+b8ca9000-b8caa000 rw-p 00000000 00:00 0          [heap]
+beba8000-bebc9000 rw-p 00000000 00:00 0          [stack]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
