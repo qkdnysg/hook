@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
     }
     //PTRACE_ATTACH成功，则目标进程成为当前进程的子进程，并进入中止状态，即target此时中止
     //被跟踪进程（target）继续运行，直到系统调用开始或结束时，被跟踪进程被中止，并通知父进程。
-    ptrace(PTRACE_SYSCALL, pid, NULL, NULL);//即此句执行完后，target中止
+    ptrace(PTRACE_SYSCALL, pid, NULL, NULL);//即此句执行完后，target中止于系统调用开始时
     
     while(1)
     {

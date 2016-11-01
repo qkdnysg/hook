@@ -9,6 +9,7 @@
 #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
 
 int mzhengHook(char * str){
+	//so函数，打印so之pid与传入的字符串
     printf("mzheng Hook pid = %d\n", getpid());
     printf("Hello %s\n", str);
     LOGD("mzheng Hook pid = %d\n", getpid());
