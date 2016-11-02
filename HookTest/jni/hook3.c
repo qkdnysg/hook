@@ -78,7 +78,7 @@ void* get_module_base(pid_t pid, const char* module_name)//获取模块基址
         snprintf(filename, sizeof(filename), "/proc/%d/maps", pid);
     }
 
-    fp = fopen(filename, "r");
+    fp = fopen(filename, "r");  //
 
     if (fp != NULL) {
         while (fgets(line, sizeof(line), fp)) {

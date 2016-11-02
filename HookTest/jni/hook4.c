@@ -11,7 +11,7 @@
 #include <string.h>
 #include <elf.h>
 #include <android/log.h>
-//T标志位：该位反映处理器的运行状态。当该位为1时，程序运行于THUMB状态，否则运行于ARM状态。
+//T标志位：该位反映处理器的运行状态。当该位为1时，程序运行于THUMB状态，否则运行于ARM状态。//
 #define CPSR_T_MASK     ( 1u << 5 )//32位CPSR寄存器
 const char *libc_path = "/system/lib/libc.so";
 
