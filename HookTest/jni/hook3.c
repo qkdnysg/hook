@@ -132,9 +132,7 @@ int ptrace_call(pid_t pid, long addr, long *params, uint32_t num_params, struct 
 
     regs->ARM_pc = addr;//sleep函数所在地址
     if (regs->ARM_pc & 1) {
-    	/*BX{cond}     Rm   ,指令功能，BX指令跳转到Rm指定的地址去执行程序，
-    	 * 若Rm的bit0为1， 则跳转时自动将CPSR中的标志T置位，即把目标地址的代码解释为Thumb代码，
-    	 * 如果为bit0位为0的话， 则跳转时自动将CPSR中的标志T复位，即把目标地址的代码解释为ARM代码。*/
+
         /* thumb */
         regs->ARM_pc &= (~1u);
         regs->ARM_cpsr |= CPSR_T_MASK;//cpsr之T位置1
@@ -155,6 +153,7 @@ int ptrace_call(pid_t pid, long addr, long *params, uint32_t num_params, struct 
     waitpid(pid, &stat, WUNTRACED);//会暂时停止目前进程的执行，直到有信号来到或子进程结束。
     							//WUNTRACED 若子进程进入暂停状态，则马上返回，但子进程的结束状态不予以理会。
     while (stat != 0xb7f) {
+
         if (ptrace_continue(pid) == -1) {
             printf("error\n");
             return -1;

@@ -1,0 +1,9 @@
+root@generic:/data/local/tmp # ./hook4 1979
+getting remote addres:
+mmap_addr=0xb6f96b25 dlopen_addr=0xb6fe7f11 dlsym_addr=0xb6fe7e61 dlclose_addr=0xb6fe7ddd
+map_base = 0xb6f42000
+save so_path = /data/local/tmp/libinject.so to map_base = 0xb6f42000
+handle = 0xb6fe45b8
+save function_name = mzhengHook to map_base = 0xb6f42000
+function_ptr = 0xb6f3ccbd
+save parameter = sevenWeapons to map_base = 0xb6f42000

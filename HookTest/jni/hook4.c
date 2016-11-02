@@ -139,6 +139,9 @@ int ptrace_call(pid_t pid, uint32_t addr, long *params, uint32_t num_params, str
 
     regs->ARM_pc = addr;
     if (regs->ARM_pc & 1) {
+    	/*BX{cond}     Rm   ,指令功能，BX指令跳转到Rm指定的地址去执行程序，
+    	    	 * 若Rm的bit0为1， 则跳转时自动将CPSR中的标志T置位，即把目标地址的代码解释为Thumb代码，
+    	    	 * 如果为bit0位为0的话， 则跳转时自动将CPSR中的标志T复位，即把目标地址的代码解释为ARM代码。*/
         /* thumb */
         regs->ARM_pc &= (~1u);
         regs->ARM_cpsr |= CPSR_T_MASK;
@@ -158,6 +161,10 @@ int ptrace_call(pid_t pid, uint32_t addr, long *params, uint32_t num_params, str
     int stat = 0;
     waitpid(pid, &stat, WUNTRACED);
     while (stat != 0xb7f) {
+    	/*通过看ndk的源码sys/wait.h以及man waitpid可以知道这个0xb7f的具体作用。
+    	    	 * 首先说一下stat的值：高2字节用于表示导致子进程的退出或暂停状态信号值，
+    	    	 * 低2字节表示子进程是退出(0x0)还是暂停(0x7f)状态。0xb7f就表示子进程为暂停状态，
+    	    	 * 导致它暂停的信号量为11即sigsegv错误。*/
         if (ptrace_continue(pid) == -1) {
             printf("error\n");
             return -1;
